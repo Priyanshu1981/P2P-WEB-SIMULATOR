@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Global Corp | P2P Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Apex Global Corp</h1>
+            <p>Procure-to-Pay (P2P) SAP MM Simulator</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="card form-section">
+            <h2>1. Create Purchase Requisition (T-Code: ME51N)</h2>
+            <form id="pr-form">
+                <div class="input-group">
+                    <label for="material">Material code</label>
+                    <input type="text" id="material" value="RM-STEEL-01" required>
+                </div>
+                <div class="input-group">
+                    <label for="qty">Quantity (EA)</label>
+                    <input type="number" id="qty" value="500" required>
+                </div>
+                <div class="input-group">
+                    <label for="plant">Plant ID</label>
+                    <input type="text" id="plant" value="APM1" readonly>
+                </div>
+                <button type="submit" class="btn primary-btn">Generate PR</button>
+            </form>
+        </section>
+
+        <section class="card dashboard-section">
+            <h2>Procurement Tracking Dashboard</h2>
+            <p class="subtitle">Advance items through the SAP lifecycle below.</p>
+            
+            <div class="table-container">
+                <table id="p2p-table">
+                    <thead>
+                        <tr>
+                            <th>Doc ID</th>
+                            <th>Material</th>
+                            <th>Qty</th>
+                            <th>Current Stage</th>
+                            <th>Next SAP Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
